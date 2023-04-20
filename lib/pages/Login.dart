@@ -3,12 +3,12 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class SignUpPage extends StatefulWidget {
+class LoginPage extends StatefulWidget {
   @override
-  State<SignUpPage> createState() => _SignUpPage();
+  State<LoginPage> createState() => _LoginPage();
 }
 
-class _SignUpPage extends State<SignUpPage> {
+class _LoginPage extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
@@ -33,25 +33,13 @@ class _SignUpPage extends State<SignUpPage> {
                   alignment: Alignment.centerLeft,
                   child: Container(
                       child: Text(
-                    'Sign Up',
+                    'Login',
                     textAlign: TextAlign.right,
                     style:
                         TextStyle(fontSize: 30.0, fontWeight: FontWeight.bold),
                   )),
                 ),
                 SizedBox(height: 70),
-                Card(
-                  child: TextField(
-                    decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                          borderSide: BorderSide.none,
-                        ),
-                        labelText: 'Name',
-                        floatingLabelStyle: const TextStyle(height: 3),
-                        contentPadding: EdgeInsets.only(left: 15, right: 15)),
-                  ),
-                ),
-                SizedBox(height: 5),
                 Card(
                   child: TextField(
                     decoration: InputDecoration(
@@ -82,7 +70,7 @@ class _SignUpPage extends State<SignUpPage> {
                     child: Row(
                       children: [
                         Text(
-                          'Already have an account?',
+                          'Forgot your password?',
                           style: TextStyle(fontSize: 16.0, color: Colors.black),
                         ),
                         SizedBox(
@@ -109,7 +97,7 @@ class _SignUpPage extends State<SignUpPage> {
                         )),
                         child: Container(
                           child: Text(
-                            "Sign up".toUpperCase(),
+                            "Login".toUpperCase(),
                             style: TextStyle(
                                 color: Colors.white, letterSpacing: 1),
                           ),
@@ -177,7 +165,7 @@ class _SignUpPage extends State<SignUpPage> {
           ],
         ),
         SizedBox(
-          height: 10,
+          height: 20,
         )
       ]),
     );

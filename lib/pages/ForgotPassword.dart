@@ -3,12 +3,12 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class SignUpPage extends StatefulWidget {
+class ForgotPasswordPage extends StatefulWidget {
   @override
-  State<SignUpPage> createState() => _SignUpPage();
+  State<ForgotPasswordPage> createState() => _ForgotPasswordPage();
 }
 
-class _SignUpPage extends State<SignUpPage> {
+class _ForgotPasswordPage extends State<ForgotPasswordPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
@@ -33,25 +33,16 @@ class _SignUpPage extends State<SignUpPage> {
                   alignment: Alignment.centerLeft,
                   child: Container(
                       child: Text(
-                    'Sign Up',
+                    'Forgot Password',
                     textAlign: TextAlign.right,
                     style:
                         TextStyle(fontSize: 30.0, fontWeight: FontWeight.bold),
                   )),
                 ),
                 SizedBox(height: 70),
-                Card(
-                  child: TextField(
-                    decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                          borderSide: BorderSide.none,
-                        ),
-                        labelText: 'Name',
-                        floatingLabelStyle: const TextStyle(height: 3),
-                        contentPadding: EdgeInsets.only(left: 15, right: 15)),
-                  ),
-                ),
-                SizedBox(height: 5),
+                Text(
+                    "Please, enter your email adrress. You will receive a link to create a new password via email"),
+                SizedBox(height: 10),
                 Card(
                   child: TextField(
                     decoration: InputDecoration(
@@ -61,41 +52,6 @@ class _SignUpPage extends State<SignUpPage> {
                         labelText: 'Email',
                         floatingLabelStyle: const TextStyle(height: 3),
                         contentPadding: EdgeInsets.only(left: 15, right: 15)),
-                  ),
-                ),
-                SizedBox(height: 5),
-                Card(
-                  child: TextField(
-                    decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                          borderSide: BorderSide.none,
-                        ),
-                        labelText: 'Password',
-                        floatingLabelStyle: const TextStyle(height: 3),
-                        contentPadding: EdgeInsets.only(left: 15, right: 15)),
-                  ),
-                ),
-                SizedBox(height: 10),
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: Container(
-                    child: Row(
-                      children: [
-                        Text(
-                          'Already have an account?',
-                          style: TextStyle(fontSize: 16.0, color: Colors.black),
-                        ),
-                        SizedBox(
-                          width: 5,
-                        ),
-                        SvgPicture.asset(
-                          'assets/svg/arrow-right-red.svg',
-                          width: 15,
-                          fit: BoxFit.scaleDown,
-                        ),
-                      ],
-                      mainAxisAlignment: MainAxisAlignment.end,
-                    ),
                   ),
                 ),
                 SizedBox(height: 40),
@@ -109,7 +65,7 @@ class _SignUpPage extends State<SignUpPage> {
                         )),
                         child: Container(
                           child: Text(
-                            "Sign up".toUpperCase(),
+                            "Send".toUpperCase(),
                             style: TextStyle(
                                 color: Colors.white, letterSpacing: 1),
                           ),
@@ -177,7 +133,7 @@ class _SignUpPage extends State<SignUpPage> {
           ],
         ),
         SizedBox(
-          height: 10,
+          height: 20,
         )
       ]),
     );

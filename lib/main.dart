@@ -1,5 +1,8 @@
+import 'package:ecommerce_app/pages/ForgotPassword.dart';
 import 'package:flutter/material.dart';
-import './pages/Sign_up.dart';
+ import './pages/Sign_up.dart';
+// import './pages/Login.dart';
+// import './pages/ForgotPassword.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +15,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: SignUpPage(),
+      // home: LoginPage(),
+       home: SignUpPage(),
+      // home: ForgotPasswordPage(),
     );
   }
 }
