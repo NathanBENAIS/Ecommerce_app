@@ -1,14 +1,13 @@
+import 'package:ecommerce_app/pages/ForgotPassword.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class LoginPage extends StatefulWidget {
   @override
-  State<LoginPage> createState() => _LoginPage();
+  State<LoginPage> createState() => _LoginState();
 }
 
-class _LoginPage extends State<LoginPage> {
+class _LoginState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
@@ -20,14 +19,19 @@ class _LoginPage extends State<LoginPage> {
                 SizedBox(
                   height: 10,
                 ),
-                Align(
-                    alignment: Alignment.topLeft,
-                    child: SvgPicture.asset(
-                      'assets/svg/arrow-left.svg',
-                      semanticsLabel: 'Retour en arriÃ¨re',
-                      width: 20,
-                      fit: BoxFit.scaleDown,
-                    )),
+                GestureDetector(
+                  onTapUp: (details) {
+                    Navigator.pop(context);
+                  },
+                  child: Align(
+                      alignment: Alignment.topLeft,
+                      child: SvgPicture.asset(
+                        'assets/svg/arrow-left.svg',
+                        semanticsLabel: 'Retour en arrière',
+                        width: 20,
+                        fit: BoxFit.scaleDown,
+                      )),
+                ),
                 SizedBox(height: 30),
                 Align(
                   alignment: Alignment.centerLeft,
@@ -64,25 +68,35 @@ class _LoginPage extends State<LoginPage> {
                   ),
                 ),
                 SizedBox(height: 10),
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: Container(
-                    child: Row(
-                      children: [
-                        Text(
-                          'Forgot your password?',
-                          style: TextStyle(fontSize: 16.0, color: Colors.black),
-                        ),
-                        SizedBox(
-                          width: 5,
-                        ),
-                        SvgPicture.asset(
-                          'assets/svg/arrow-right-red.svg',
-                          width: 15,
-                          fit: BoxFit.scaleDown,
-                        ),
-                      ],
-                      mainAxisAlignment: MainAxisAlignment.end,
+                GestureDetector(
+                  onTapUp: (details) {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (BuildContext context) =>
+                                ForgotPasswordPage()));
+                  },
+                  child: Align(
+                    alignment: Alignment.centerRight,
+                    child: Container(
+                      child: Row(
+                        children: [
+                          Text(
+                            'Forgot your password?',
+                            style:
+                                TextStyle(fontSize: 16.0, color: Colors.black),
+                          ),
+                          SizedBox(
+                            width: 5,
+                          ),
+                          SvgPicture.asset(
+                            'assets/svg/arrow-right-red.svg',
+                            width: 15,
+                            fit: BoxFit.scaleDown,
+                          ),
+                        ],
+                        mainAxisAlignment: MainAxisAlignment.end,
+                      ),
                     ),
                   ),
                 ),
@@ -92,9 +106,8 @@ class _LoginPage extends State<LoginPage> {
                     child: FilledButton(
                         onPressed: null,
                         style: ButtonStyle(
-                            backgroundColor: MaterialStatePropertyAll<Color>(
-                          Color(0xFFDB3022),
-                        )),
+                            backgroundColor:
+                                MaterialStatePropertyAll<Color>(Colors.red)),
                         child: Container(
                           child: Text(
                             "Login".toUpperCase(),
@@ -103,16 +116,13 @@ class _LoginPage extends State<LoginPage> {
                           ),
                           padding: EdgeInsets.only(top: 15, bottom: 15),
                         ))),
-                SizedBox(
-                  height: 60,
-                ),
               ],
             ),
           ),
         ),
       ),
       bottomNavigationBar: Column(mainAxisSize: MainAxisSize.min, children: [
-        Text("Or sign up with social account"),
+        Text("Or login with social account"),
         SizedBox(
           height: 18,
         ),
@@ -165,7 +175,7 @@ class _LoginPage extends State<LoginPage> {
           ],
         ),
         SizedBox(
-          height: 20,
+          height: 30,
         )
       ]),
     );

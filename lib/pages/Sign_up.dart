@@ -24,7 +24,7 @@ class _SignUpPage extends State<SignUpPage> {
                     alignment: Alignment.topLeft,
                     child: SvgPicture.asset(
                       'assets/svg/arrow-left.svg',
-                      semanticsLabel: 'Retour en arriÃ¨re',
+                      semanticsLabel: 'Retour en arrière',
                       width: 20,
                       fit: BoxFit.scaleDown,
                     )),
