@@ -26,7 +26,7 @@ class _LoginState extends State<LoginPage> {
                   child: Align(
                       alignment: Alignment.topLeft,
                       child: SvgPicture.asset(
-                        'assets/svg/arrow-left.svg',
+                        'assets/images/svg/arrow-left.svg',
                         semanticsLabel: 'Retour en arrière',
                         width: 20,
                         fit: BoxFit.scaleDown,
@@ -89,10 +89,15 @@ class _LoginState extends State<LoginPage> {
                           SizedBox(
                             width: 5,
                           ),
-                          SvgPicture.asset(
-                            'assets/svg/arrow-right-red.svg',
-                            width: 15,
-                            fit: BoxFit.scaleDown,
+                          GestureDetector(
+                            child: SvgPicture.asset(
+                              'assets/images/svg/arrow-right-red.svg',
+                              width: 15,
+                              fit: BoxFit.scaleDown,
+                            ),
+                            onTap: () {
+                              Navigator.pushNamed(context, '/forgot-password');
+                            },
                           ),
                         ],
                         mainAxisAlignment: MainAxisAlignment.end,
@@ -145,7 +150,7 @@ class _LoginState extends State<LoginPage> {
               ),
               padding: EdgeInsets.all(15),
               child: SvgPicture.asset(
-                'assets/svg/google.svg',
+                'assets/images/svg/google.svg',
                 fit: BoxFit.scaleDown,
               ),
             ),
@@ -168,7 +173,7 @@ class _LoginState extends State<LoginPage> {
               ),
               padding: EdgeInsets.all(15),
               child: SvgPicture.asset(
-                'assets/svg/facebook.svg',
+                'assets/images/svg/facebook.svg',
                 fit: BoxFit.scaleDown,
               ),
             ),

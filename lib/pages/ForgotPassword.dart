@@ -30,7 +30,7 @@ class _ForgotPasswordState extends State<ForgotPasswordPage> {
                   child: Align(
                       alignment: Alignment.topLeft,
                       child: SvgPicture.asset(
-                        'assets/svg/arrow-left.svg',
+                        'assets/images/svg/arrow-left.svg',
                         semanticsLabel: 'Retour en arrière',
                         width: 20,
                         fit: BoxFit.scaleDown,

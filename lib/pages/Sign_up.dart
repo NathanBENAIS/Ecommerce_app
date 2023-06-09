@@ -5,6 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 class SignUpPage extends StatefulWidget {
   @override
+  const SignUpPage({Key? key}) : super(key: key);
   State<SignUpPage> createState() => _SignUpPage();
 }
 
@@ -20,14 +21,19 @@ class _SignUpPage extends State<SignUpPage> {
                 SizedBox(
                   height: 10,
                 ),
-                Align(
-                    alignment: Alignment.topLeft,
-                    child: SvgPicture.asset(
-                      'assets/svg/arrow-left.svg',
-                      semanticsLabel: 'Retour en arrière',
-                      width: 20,
-                      fit: BoxFit.scaleDown,
-                    )),
+                GestureDetector(
+                  onTapUp: (details) {
+                    Navigator.pop(context);
+                  },
+                  child: Align(
+                      alignment: Alignment.topLeft,
+                      child: SvgPicture.asset(
+                        'assets/images/svg/arrow-left.svg',
+                        semanticsLabel: 'Retour en arrière',
+                        width: 20,
+                        fit: BoxFit.scaleDown,
+                      )),
+                ),
                 SizedBox(height: 30),
                 Align(
                   alignment: Alignment.centerLeft,
@@ -82,16 +88,22 @@ class _SignUpPage extends State<SignUpPage> {
                     child: Row(
                       children: [
                         Text(
-                          'Already have an account?',
+                          'Already have an account ?',
                           style: TextStyle(fontSize: 16.0, color: Colors.black),
                         ),
                         SizedBox(
                           width: 5,
                         ),
-                        SvgPicture.asset(
-                          'assets/svg/arrow-right-red.svg',
-                          width: 15,
-                          fit: BoxFit.scaleDown,
+                        GestureDetector(
+                          child: SvgPicture.asset(
+                            'assets/images/svg/arrow-right-red.svg',
+                            width: 15,
+                            fit: BoxFit.scaleDown,
+                          ),
+                          onTap: () {
+                            Navigator.pushNamed(context, '/login',
+                                arguments: '/signUpPage');
+                          },
                         ),
                       ],
                       mainAxisAlignment: MainAxisAlignment.end,
@@ -147,7 +159,7 @@ class _SignUpPage extends State<SignUpPage> {
               ),
               padding: EdgeInsets.all(15),
               child: SvgPicture.asset(
-                'assets/svg/google.svg',
+                'assets/images/svg/google.svg',
                 fit: BoxFit.scaleDown,
               ),
             ),
@@ -170,7 +182,7 @@ class _SignUpPage extends State<SignUpPage> {
               ),
               padding: EdgeInsets.all(15),
               child: SvgPicture.asset(
-                'assets/svg/facebook.svg',
+                'assets/images/svg/facebook.svg',
                 fit: BoxFit.scaleDown,
               ),
             ),

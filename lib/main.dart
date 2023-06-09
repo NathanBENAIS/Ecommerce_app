@@ -1,17 +1,18 @@
-import 'package:ecommerce_app/pages/ForgotPassword.dart';
 import 'package:flutter/material.dart';
-// import './pages/Sign_up.dart';
-// import './pages/Login.dart';
+import './pages/Sign_up.dart';
+import './pages/Login.dart';
 import './pages/ForgotPassword.dart';
+import 'pages/Home.dart';
+import 'pages/Home2.dart';
+import 'pages/Home3.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -19,9 +20,15 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.grey,
       ),
-      // home: SignUpPage(),
-      // home: LoginPage(),
-      home: ForgotPasswordPage(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => Home3Page(),
+        // '/': (context) => Home2Page(),
+        // '/': (context) => HomePage(),
+        '/signUpPage': (context) => SignUpPage(),
+        '/login': (context) => LoginPage(),
+        '/forgot-password': (context) => ForgotPasswordPage(),
+      },
     );
   }
 }
