@@ -22,9 +22,9 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => Home3Page(),
-        // '/': (context) => Home2Page(),
+        '/': (context) => Home2Page(),
         // '/': (context) => HomePage(),
+        // '/': (context) => Home3Page(),
         '/signUpPage': (context) => SignUpPage(),
         '/login': (context) => LoginPage(),
         '/forgot-password': (context) => ForgotPasswordPage(),
